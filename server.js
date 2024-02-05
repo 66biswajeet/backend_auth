@@ -16,7 +16,7 @@ const clientsecret = "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";
 
 app.use(
   cors({
-    origin: process.env.URL,
+    origin: "https://biswafrontend.onrender.com",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -88,8 +88,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: process.env.URL_USER,
-    failureRedirect: process.env.URL,
+    successRedirect:  "https://biswafrontend.onrender.com/users",
+    failureRedirect:  "https://biswafrontend.onrender.com",
   })
 );
 
