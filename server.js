@@ -88,8 +88,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/users",
-    failureRedirect: "http://localhost:3000",
+    successRedirect: process.env.URL / "users",
+    failureRedirect: process.env.URL,
   })
 );
 
@@ -106,7 +106,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:3000");
+    res.redirect(process.env.URL);
   });
 });
 
