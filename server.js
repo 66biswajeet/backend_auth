@@ -16,7 +16,7 @@ const clientsecret = "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";
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.URL,
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
